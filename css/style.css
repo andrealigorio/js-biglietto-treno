@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.train_ticket {
+    width: 720px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.train_ticket span {
+    position: absolute;
+}
+#name1 {
+    top: 132px;
+    left: 140px;
+}
+#from1 {
+    top: 155px;
+    left: 140px;
+}
+#to1 {
+    top: 177px;
+    left: 140px;
+}
+#class1 {
+    top: 200px;
+    left: 140px;
+}
+#date1 {
+    top: 222px;
+    left: 140px;
+}
+#depart_time1 {
+    top: 280px;
+    left: 115px;
+}
+#seat1 {
+    top: 280px;
+    left: 60px;
+}
+#seat2 {
+    top: 280px;
+    left: 200px;
+}
+#name2 {
+    top: 124px;
+    left: 420px;
+}
+#from2 {
+    top: 124px;
+    left: 575px;
+}
+#from3 {
+    top: 147px;
+    left: 420px;
+}
+#date2 {
+    top: 147px;
+    left: 575px;
+}
+#to2 {
+    top: 168px;
+    left: 420px;
+}
+#class2 {
+    top: 240px;
+    left: 325px;
+}
+#depart_time2 {
+    top: 240px;
+    left: 480px;
+}
+#seat3 {
+    top: 240px;
+    left: 590px;
+}
+#star {
+    width: 200px;
+    top: 270px;
+    left: 325px;
+    font-size: 13px;
+    text-transform: none;
+    font-weight: 400;
+}
+#price {
+    top: 270px;
+    left: 580px;
+    font-size: 18px;
+}
