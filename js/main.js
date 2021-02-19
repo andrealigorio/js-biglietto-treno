@@ -23,7 +23,17 @@ while (cont < 1) {
     }
 }
 
-var age = prompt("Inserisci la tua età");
+var age;
+//Controllo se l'età inserita è un numero
+while (cont==1) {
+    age = prompt("Inserisci la tua età");
+    if (isNaN(age)) {
+        alert('Il valore inserito deve essere numerico');
+    } else {
+        cont++;
+    }
+}
+
 
 //Inizializzo un oggetto con classe Date e calcolo ore e minuti
 var departTime = new Date();
