@@ -2,21 +2,43 @@ const youngDiscount = 0.20;
 const oldDiscount = 0.40;
 const price = 0.21;
 
-var myName = prompt("Benvenuto sul portale della stazione ferroviaria di Roma.\nPrenota il tuo biglietto...\nInserisci il tuo nome");
-var surname = prompt("Inserisci il tuo cognome");
+//Inizializzo nome e cognome utente e controllo che abbia valore stringa
+var myName, surname;
+var cont = false
+while (cont==false) {
+    myName = prompt("Benvenuto sul portale della stazione ferroviaria di Roma.\nPrenota il tuo biglietto...\nInserisci il tuo nome");
+    console.log(myName);
+    if (isNaN(myName)) {
+        cont = true;
+    } else {
+        alert("Errore... inserire il proprio nome utilizzando solo caratteri");
+    }
+}
+cont = false;
+
+while (cont == false) {
+    surname = prompt("Inserisci il tuo cognome");
+    console.log(surname);
+    if (isNaN(surname)) {
+        cont = true;
+    } else {
+        alert("Errore... inserire il proprio cognome utilizzando solo caratteri");
+    }
+}
+
 var identity = myName + " " + surname;
 document.getElementById('name1').innerHTML = identity;
 document.getElementById('name2').innerHTML = identity;
 
 var destination;
-var cont = 0;
+cont = false;
 
-while (cont < 1) {
+while (cont==false) {
     destination = prompt("Inserisci la tua destinazione tra quelle indicate:\nBologna\nFirenze\nNapoli\nMilano\nVenezia");
     if (destination == "Bologna" || destination == "Napoli" || destination == "Firenze" || destination == "Venezia" || destination == "Milano") {
         document.getElementById('to1').innerHTML = destination;
         document.getElementById('to2').innerHTML = destination;
-        cont++;
+        cont=true;
     }
     else {
         alert("Errore... Inserisci correttamente utilizzando la lettera maiuscola")
@@ -25,12 +47,15 @@ while (cont < 1) {
 
 var age;
 //Controllo se l'età inserita è un numero
-while (cont==1) {
+cont = false;
+while (cont==false) {
     age = prompt("Inserisci la tua età");
     if (isNaN(age)) {
         alert('Il valore inserito deve essere numerico');
+    } else if (age > 110) {
+        alert("Complimenti potresti fare concorrenza alla Regina Elisabetta!\nOra fai meno lo spiritoso"); //Perdonatemi ma ci voleva :)
     } else {
-        cont++;
+        cont = true;
     }
 }
 
@@ -88,7 +113,7 @@ if (age < 18) {
     ticketPrice -= discount;
     document.getElementById('star').innerHTML = ("*Al cliente minorenne è applicato sconto pari a € " + Math.round(discount * 100) / 100);
 }
-else if (age > 65) {
+else if (age > 65 && age <= 110) {
     discount = ticketPrice * oldDiscount;
     ticketPrice -= discount;
     document.getElementById('star').innerHTML = ("*Al cliente over 65 è applicato sconto pari a € " + Math.round(discount * 100) / 100);
